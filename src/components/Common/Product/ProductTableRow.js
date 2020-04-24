@@ -60,7 +60,7 @@ function ProductTableRow(props) {
     <td>{product.price}</td>
     <td>
       <Badge color="" className="badge-dot mr-4">
-        <i className="bg-success" />
+        <i className={product.active ? 'bg-success' : 'bg-danger'} />
           {
             product.active ? 'Còn hàng' : 'Hết hàng'
           }
