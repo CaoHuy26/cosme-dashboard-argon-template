@@ -13,8 +13,7 @@ function UserListItem(props) {
       >
         <div>
           <i className="ni ni-circle-08" />
-          <span>{user.name}</span>
-          {/* <span>Ngày tạo: {user.date}</span> */}
+          <span>{user.email}</span>
         </div>
       </button>
       
@@ -23,7 +22,9 @@ function UserListItem(props) {
         trigger="hover focus"
         target={"user-" + user.id}
       >
-        {user.date}
+        Email: {user.username}
+        {<br/>}
+        {user.createdAt}
       </UncontrolledTooltip>
     </Col>
   );

@@ -7,7 +7,7 @@ import productActions from 'redux/product/productActions';
 
 function ProductTable() {
   
-  const products = useSelector(state => state.productReducers);
+  const productReducers = useSelector(state => state.productReducers);
   const isLoading = useSelector(state => state.productReducers.isLoading);
   const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ function ProductTable() {
               </thead>
               <tbody>
                 {
-                  products.products.map(product => (
+                  productReducers.products.map(product => (
                     <ProductTableRow
                       key={product.id}
                       product={product}
