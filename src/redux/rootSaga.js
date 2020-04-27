@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 import { fetchProductsWatcher, deleteProductWatcher, editProductWatcher } from './product/productSagas';
-import { fetchUsersWatcher } from './user/userSagas';
+import { fetchUsersWatcher, banUserWatcher, unbanUserWatcher, deleteUserWatcher } from './user/userSagas';
 
 function* rootSaga() {
   yield all([
@@ -8,7 +8,10 @@ function* rootSaga() {
     deleteProductWatcher(),
     editProductWatcher(),
 
-    fetchUsersWatcher()
+    fetchUsersWatcher(),
+    banUserWatcher(),
+    unbanUserWatcher(),
+    deleteUserWatcher()
   ]);
 };
 

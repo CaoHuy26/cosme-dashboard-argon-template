@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, UncontrolledTooltip } from 'reactstrap';
+import UserActions from './UserActions';
 
 function UserListItem(props) {
   const { user } = props;
@@ -10,10 +11,18 @@ function UserListItem(props) {
         className="btn-icon-clipboard"
         id={"user-" + user.id}
         type="button"
+        style={{backgroundColor: !user.active ? "#fff0f6" : null}}
       >
-        <div>
-          <i className="ni ni-circle-08" />
-          <span>{user.email}</span>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+          <div>
+            <i className="ni ni-circle-08" />
+            <span style={{textDecoration: !user.active ? "line-through" : null}}>
+              {user.email}
+            </span>
+          </div>
+
+          <UserActions user={user}/>
+          
         </div>
       </button>
       
@@ -22,7 +31,7 @@ function UserListItem(props) {
         trigger="hover focus"
         target={"user-" + user.id}
       >
-        Email: {user.username}
+        Email: {user.email}
         {<br/>}
         {user.createdAt}
       </UncontrolledTooltip>
