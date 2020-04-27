@@ -15,17 +15,17 @@ var routes = [
     layout: "/admin"
   },
   {
+    path: "/products",
+    name: "Products",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: Products,
+    layout: "/admin"
+  },
+  {
     path: "/users",
     name: "Users",
     icon: "ni ni-planet text-blue",
     component: Users,
-    layout: "/admin"
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: "ni ni-pin-3 text-orange",
-    component: Maps,
     layout: "/admin"
   },
   {
@@ -36,10 +36,10 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/products",
-    name: "Products",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: Products,
+    path: "/maps",
+    name: "Maps",
+    icon: "ni ni-pin-3 text-orange",
+    component: Maps,
     layout: "/admin"
   },
   {
